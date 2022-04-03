@@ -52,6 +52,9 @@ param appServiceEnvironmentId string = ''
 @description('Optional. Enables system assigned managed identity on the resource.')
 param systemAssignedIdentity bool = false
 
+@description('Optional. Specify subnet resource id to connect to.')
+param subnetResourceId string
+
 @description('Optional. The ID(s) to assign to the resource.')
 param userAssignedIdentities object = {}
 
@@ -179,6 +182,7 @@ resource app 'Microsoft.Web/sites@2020-12-01' = {
   kind: kind
   tags: tags
   identity: identity
+  virtualNetworkSubnetId: subnetResoureId
   properties: {
     serverFarmId: serverFarmResourceId
     httpsOnly: httpsOnly
