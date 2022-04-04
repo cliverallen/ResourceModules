@@ -182,7 +182,7 @@ resource app 'Microsoft.Web/sites@2020-12-01' = {
   kind: kind
   tags: tags
   identity: identity
-  virtualNetworkSubnetId: subnetResoureId
+  virtualNetworkSubnetId: subnetResourceId
   properties: {
     serverFarmId: serverFarmResourceId
     httpsOnly: httpsOnly
